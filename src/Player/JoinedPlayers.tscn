@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player2.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player/JoinedPlayers.gd" type="Script" id=3]
 [ext_resource path="res://Player/Rope.tscn" type="PackedScene" id=10]
+
+[sub_resource type="CapsuleShape2D" id=1]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 3 )
@@ -21,6 +23,13 @@ softness = 8.0
 position = Vector2( 7, -3 )
 rotation = 1.5708
 gravity_scale = 0.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Rope1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rope1/StaticBody2D"]
+position = Vector2( -0.999895, 29 )
+rotation = 1.5708
+shape = SubResource( 1 )
 
 [node name="PinJoint2" type="PinJoint2D" parent="."]
 position = Vector2( 15, -3 )
@@ -73,6 +82,14 @@ softness = 8.0
 position = Vector2( 67, -3 )
 rotation = 1.5708
 gravity_scale = 0.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Rope5"]
+position = Vector2( 0.000217199, 60 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rope5/StaticBody2D"]
+position = Vector2( -1.00033, -89 )
+rotation = 1.5708
+shape = SubResource( 1 )
 
 [node name="PinJoint6" type="PinJoint2D" parent="."]
 position = Vector2( 75, -3 )

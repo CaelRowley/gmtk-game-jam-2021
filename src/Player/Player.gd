@@ -29,10 +29,16 @@ func _ready():
 	animationTree.active = true
 	# sets default direction for sword attack to match roll direction
 	swordHitbox.knockbackVector = rollVector
-	
+
+#func _physics_process(delta):
+#	var collide = move_and_collide(velocity * delta)
+#	if collide:
+#		print(collide.get_instance_id())
+#		velocity = velocity.bounce(collide.normal)
+		
 func _process(delta):
 	#var distance2Hero = enemy.get_global_pos().distance_to(hero.get_global_pos()); if(distance2Hero<100): enemy.throwBulletAt(hero);
-	print(global_position)
+	#print(global_position)
 	
 	match state:
 		RUN:

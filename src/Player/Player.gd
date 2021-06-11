@@ -31,6 +31,9 @@ func _ready():
 	swordHitbox.knockbackVector = rollVector
 	
 func _process(delta):
+	#var distance2Hero = enemy.get_global_pos().distance_to(hero.get_global_pos()); if(distance2Hero<100): enemy.throwBulletAt(hero);
+	print(global_position)
+	
 	match state:
 		RUN:
 			runState(delta)

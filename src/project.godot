@@ -15,7 +15,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Dungeon Crawler"
-run/main_scene="res://World.tscn"
+run/main_scene="res://Level1.tscn"
 config/icon="res://icon.png"
 
 [autoload]

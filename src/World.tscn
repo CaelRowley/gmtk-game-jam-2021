@@ -486,6 +486,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 0/z_index = 0
 
 [node name="World" type="Node2D"]
+position = Vector2( 0, 0.25 )
 
 [node name="Background" type="Sprite" parent="."]
 texture = ExtResource( 4 )
@@ -776,7 +777,7 @@ position = Vector2( 272, 184 )
 position = Vector2( 39, -77 )
 
 [node name="Tree10" parent="YSort/Trees" instance=ExtResource( 9 )]
-position = Vector2( 121, -57.75 )
+position = Vector2( 114.375, -46.375 )
 
 [node name="Tree11" parent="YSort/Trees" instance=ExtResource( 9 )]
 position = Vector2( 25, -120 )

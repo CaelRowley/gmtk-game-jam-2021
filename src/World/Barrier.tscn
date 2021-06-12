@@ -1,57 +1,56 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://World/Player1Goal.tscn" type="PackedScene" id=1]
+[ext_resource path="res://World/Carrot.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/Bush.png" type="Texture" id=2]
-[ext_resource path="res://World/Player2Goal.tscn" type="PackedScene" id=3]
+[ext_resource path="res://World/Acorn.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Shadows/LargeShadow.png" type="Texture" id=4]
 [ext_resource path="res://World/Barrier.gd" type="Script" id=5]
 
-[sub_resource type="CapsuleShape2D" id=2]
-radius = 14.0
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 7.0
 height = 0.0
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 9.0
+height = 0.0
+
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 66, 10 )
-
-[sub_resource type="CapsuleShape2D" id=4]
-radius = 15.0
-height = 0.0
 
 [node name="Barrier" type="Node2D"]
 script = ExtResource( 5 )
 
-[node name="Player1Goal" parent="." instance=ExtResource( 1 )]
-position = Vector2( -20, 40 )
-collision_layer = 0
-collision_mask = 256
+[node name="Acorn" parent="." instance=ExtResource( 3 )]
+position = Vector2( -22, 39 )
 
-[node name="Area2D" type="Area2D" parent="Player1Goal"]
-position = Vector2( -9, -42 )
+[node name="Area2D" type="Area2D" parent="Acorn"]
+position = Vector2( 0, 2 )
 collision_layer = 256
 collision_mask = 256
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player1Goal/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Acorn/Area2D"]
+position = Vector2( 0, -3 )
+shape = SubResource( 3 )
+
+[node name="Carrot" parent="." instance=ExtResource( 1 )]
+position = Vector2( 37, 39 )
+collision_layer = 0
+collision_mask = 256
+
+[node name="Area2D" type="Area2D" parent="Carrot"]
+position = Vector2( -9, -39 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Carrot/Area2D"]
 position = Vector2( 9, 39 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 8, 8 )
-shape = SubResource( 3 )
-
-[node name="Player2Goal" parent="." instance=ExtResource( 3 )]
-position = Vector2( 37, 42 )
-collision_layer = 0
-collision_mask = 512
-
-[node name="Area2D" type="Area2D" parent="Player2Goal"]
-collision_layer = 512
-collision_mask = 512
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2Goal/Area2D"]
-position = Vector2( 0, -3 )
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 7, 14 )
@@ -82,7 +81,7 @@ texture = ExtResource( 2 )
 position = Vector2( 60, 5 )
 texture = ExtResource( 2 )
 
-[connection signal="body_entered" from="Player1Goal/Area2D" to="." method="_on_Area2D_body_entered"]
-[connection signal="body_exited" from="Player1Goal/Area2D" to="." method="_on_Area2D_body_exited"]
-[connection signal="body_entered" from="Player2Goal/Area2D" to="." method="_on_Area2D_body_entered"]
-[connection signal="body_exited" from="Player2Goal/Area2D" to="." method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="Acorn/Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Acorn/Area2D" to="." method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="Carrot/Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Carrot/Area2D" to="." method="_on_Area2D_body_exited"]

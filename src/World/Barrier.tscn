@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://World/Player1Goal.tscn" type="PackedScene" id=1]
-[ext_resource path="res://World/Grass.png" type="Texture" id=2]
+[ext_resource path="res://World/Bush.png" type="Texture" id=2]
 [ext_resource path="res://World/Player2Goal.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Shadows/MediumShadow.png" type="Texture" id=4]
+[ext_resource path="res://Shadows/LargeShadow.png" type="Texture" id=4]
 [ext_resource path="res://World/Barrier.gd" type="Script" id=5]
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -19,16 +19,6 @@ height = 0.0
 
 [node name="Barrier" type="Node2D"]
 script = ExtResource( 5 )
-
-[node name="Shadow" type="Sprite" parent="."]
-position = Vector2( 8, 10 )
-scale = Vector2( 1.10195, 1.41094 )
-texture = ExtResource( 4 )
-
-[node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 2 )
-centered = false
-offset = Vector2( -8, -8 )
 
 [node name="Player1Goal" parent="." instance=ExtResource( 1 )]
 position = Vector2( -20, 40 )
@@ -62,6 +52,35 @@ collision_mask = 512
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player2Goal/Area2D"]
 position = Vector2( 0, -3 )
 shape = SubResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 7, 14 )
+scale = Vector2( 4, 1 )
+texture = ExtResource( 4 )
+
+[node name="Bush" type="Sprite" parent="."]
+position = Vector2( -45, 5 )
+texture = ExtResource( 2 )
+
+[node name="Bush2" type="Sprite" parent="."]
+position = Vector2( -27, 5 )
+texture = ExtResource( 2 )
+
+[node name="Bush3" type="Sprite" parent="."]
+position = Vector2( -5, 6 )
+texture = ExtResource( 2 )
+
+[node name="Bush5" type="Sprite" parent="."]
+position = Vector2( 38, 5 )
+texture = ExtResource( 2 )
+
+[node name="Bush4" type="Sprite" parent="."]
+position = Vector2( 17, 5 )
+texture = ExtResource( 2 )
+
+[node name="Bush6" type="Sprite" parent="."]
+position = Vector2( 60, 5 )
+texture = ExtResource( 2 )
 
 [connection signal="body_entered" from="Player1Goal/Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Player1Goal/Area2D" to="." method="_on_Area2D_body_exited"]

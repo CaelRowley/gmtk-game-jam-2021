@@ -7,10 +7,17 @@ var player1InGoal = false
 var player2InGoal = false
 
 func createGrassEffect():
-	var grassEffect = GrassEffect.instance()
-	get_parent().add_child(grassEffect)
-	grassEffect.global_position = global_position
-	queue_free()
+	print(global_position)
+	for n in 4:
+		var grassEffect = GrassEffect.instance()
+		get_parent().add_child(grassEffect)
+		grassEffect.global_position = Vector2(global_position.x - (n * 12), global_position.y)
+		queue_free()
+	for n in 4:
+		var grassEffect = GrassEffect.instance()
+		get_parent().add_child(grassEffect)
+		grassEffect.global_position = Vector2(global_position.x + (n * 12), global_position.y)
+		queue_free()
 
 
 func _on_Hurtbox_area_entered(_area):

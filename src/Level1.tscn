@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://World/GrassBackground.png" type="Texture" id=1]
 [ext_resource path="res://World/CliffTileset.png" type="Texture" id=2]
@@ -6,9 +6,7 @@
 [ext_resource path="res://Music and Sounds/BackgroundSong.wav" type="AudioStream" id=4]
 [ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=5]
 [ext_resource path="res://World/Barrier.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Player/Rope.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Player/Player2.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Player/JoinedPlayers.tscn" type="PackedScene" id=7]
 [ext_resource path="res://World/Tree.tscn" type="PackedScene" id=10]
 
 [sub_resource type="TileSet" id=1]
@@ -485,18 +483,6 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 } ]
 0/z_index = 0
 
-[sub_resource type="SegmentShape2D" id=50]
-a = Vector2( 2.99997, -9.00001 )
-b = Vector2( 11, -3.62396e-05 )
-
-[sub_resource type="SegmentShape2D" id=51]
-a = Vector2( -13, 10 )
-b = Vector2( -2.99996, 10 )
-
-[sub_resource type="SegmentShape2D" id=52]
-a = Vector2( 10, -3.62396e-05 )
-b = Vector2( 3.00003, 8.99999 )
-
 [node name="World" type="Node2D"]
 position = Vector2( 5.25, 42.5 )
 
@@ -525,6 +511,9 @@ tile_data = PoolIntArray( -65532, 0, 0, -65531, 0, 2, 4, 0, 65536, 5, 0, 131077,
 [node name="YSort" type="YSort" parent="."]
 position = Vector2( 177, 253 )
 
+[node name="JoinedPlayers" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( 249.75, 163.5 )
+
 [node name="Barrier" parent="YSort" instance=ExtResource( 6 )]
 position = Vector2( 266.852, 2.80679 )
 
@@ -539,123 +528,6 @@ position = Vector2( 23.1633, 0.8909 )
 
 [node name="CollisionShape2D" parent="YSort/Barrier/Player2Goal/Area2D" index="0"]
 position = Vector2( -23.6088, -2.10913 )
-
-[node name="Player1" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 233.856, 156.653 )
-
-[node name="Camera2D" type="Camera2D" parent="YSort/Player1"]
-position = Vector2( 11.7852, -5.43303 )
-current = true
-smoothing_enabled = true
-
-[node name="PinJoint1" type="PinJoint2D" parent="YSort"]
-position = Vector2( 233.856, 153.653 )
-node_a = NodePath("../Player1")
-node_b = NodePath("../Rope1")
-bias = 0.5
-softness = 8.0
-
-[node name="Rope1" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 240.856, 153.653 )
-rotation = 1.5708
-gravity_scale = 0.0
-
-[node name="StaticBody2D" type="StaticBody2D" parent="YSort/Rope1"]
-collision_layer = 64
-collision_mask = 64
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Rope1/StaticBody2D"]
-position = Vector2( -12.9999, 21 )
-shape = SubResource( 50 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="YSort/Rope1/StaticBody2D"]
-position = Vector2( 11, 11 )
-shape = SubResource( 51 )
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="YSort/Rope1/StaticBody2D"]
-position = Vector2( 5.00004, 12 )
-shape = SubResource( 52 )
-
-[node name="PinJoint2" type="PinJoint2D" parent="YSort"]
-position = Vector2( 248.856, 153.653 )
-rotation = 1.5708
-node_a = NodePath("../Rope1")
-node_b = NodePath("../Rope2")
-bias = 0.5
-softness = 8.0
-
-[node name="Rope2" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 255.856, 153.653 )
-rotation = 1.5708
-gravity_scale = 0.0
-
-[node name="PinJoint3" type="PinJoint2D" parent="YSort"]
-position = Vector2( 263.856, 153.653 )
-rotation = -3.14159
-node_a = NodePath("../Rope2")
-node_b = NodePath("../Rope3")
-bias = 0.5
-softness = 8.0
-
-[node name="Rope3" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 270.856, 153.653 )
-rotation = 1.5708
-gravity_scale = 0.0
-
-[node name="PinJoint4" type="PinJoint2D" parent="YSort"]
-position = Vector2( 278.856, 153.653 )
-rotation = 3.01992e-07
-node_a = NodePath("../Rope3")
-node_b = NodePath("../Rope4")
-bias = 0.5
-softness = 8.0
-
-[node name="Rope4" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 285.856, 153.653 )
-rotation = 1.5708
-gravity_scale = 0.0
-
-[node name="PinJoint5" type="PinJoint2D" parent="YSort"]
-position = Vector2( 293.856, 153.653 )
-rotation = 6.03983e-07
-node_a = NodePath("../Rope4")
-node_b = NodePath("../Rope5")
-bias = 0.5
-softness = 8.0
-
-[node name="Rope5" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 300.856, 153.653 )
-rotation = 1.5708
-gravity_scale = 0.0
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="YSort/Rope5"]
-position = Vector2( 6, -3.05176e-05 )
-rotation = 3.14159
-collision_layer = 128
-collision_mask = 128
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Rope5/StaticBody2D2"]
-position = Vector2( -12.9999, 21 )
-shape = SubResource( 50 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="YSort/Rope5/StaticBody2D2"]
-position = Vector2( 11, 11 )
-shape = SubResource( 51 )
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="YSort/Rope5/StaticBody2D2"]
-position = Vector2( 5.00004, 12 )
-shape = SubResource( 52 )
-
-[node name="PinJoint6" type="PinJoint2D" parent="YSort"]
-position = Vector2( 308.856, 153.653 )
-rotation = 1.20797e-06
-node_a = NodePath("../Rope5")
-node_b = NodePath("../Player2")
-bias = 0.5
-softness = 8.0
-
-[node name="Player2" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( 308.856, 157.653 )
 
 [node name="Tree" parent="YSort" instance=ExtResource( 10 )]
 position = Vector2( 271.359, 126.674 )

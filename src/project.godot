@@ -121,6 +121,8 @@ player2_down={
 2d_physics/layer_6="SoftCollisions"
 2d_physics/layer_7="Player1"
 2d_physics/layer_8="Player2"
+2d_physics/layer_9="Player1Goal"
+2d_physics/layer_10="Player2Goal"
 
 [rendering]
 

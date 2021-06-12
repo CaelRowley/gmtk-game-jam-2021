@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Player_BunnyV1.png-29173f0bbf992106c4d31b842b44ee2e.stex"
+path="res://.import/Player2.png-ba957fb813a3abf66964dbb9a03abdbe.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Player_BunnyV1.png"
-dest_files=[ "res://.import/Player_BunnyV1.png-29173f0bbf992106c4d31b842b44ee2e.stex" ]
+source_file="res://Player/Player2.png"
+dest_files=[ "res://.import/Player2.png-ba957fb813a3abf66964dbb9a03abdbe.stex" ]
 
 [params]
 

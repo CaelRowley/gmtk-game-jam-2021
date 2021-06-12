@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=60 format=2]
 
 [ext_resource path="res://World/GrassBackground.png" type="Texture" id=1]
 [ext_resource path="res://World/CliffTileset.png" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=5]
 [ext_resource path="res://World/Barrier.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Player/JoinedPlayers.tscn" type="PackedScene" id=7]
+[ext_resource path="res://World/Bush.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Enemies/Player1Enemy.tscn" type="PackedScene" id=9]
 [ext_resource path="res://World/Tree.tscn" type="PackedScene" id=10]
 
 [sub_resource type="TileSet" id=1]
@@ -487,11 +489,11 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 position = Vector2( 5.25, 42.5 )
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( 0.668182, -0.668182 )
+position = Vector2( -0.25, -0.5 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
-region_rect = Rect2( 0, 0, 919, 984 )
+region_rect = Rect2( -417.263, -471.393, 1022.59, 1142.43 )
 
 [node name="DirtPathTileMap" type="TileMap" parent="."]
 position = Vector2( 177, 253 )
@@ -512,16 +514,16 @@ tile_data = PoolIntArray( -65532, 0, 0, -65531, 0, 2, 4, 0, 65536, 5, 0, 131077,
 position = Vector2( 177, 253 )
 
 [node name="JoinedPlayers" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 249.75, 163.5 )
+position = Vector2( 249.75, 152.193 )
 
 [node name="Barrier" parent="YSort" instance=ExtResource( 6 )]
-position = Vector2( 266.852, 2.80679 )
+position = Vector2( 265.852, -18.5 )
 
 [node name="Player1Goal" parent="YSort/Barrier" index="0"]
-position = Vector2( -25.3454, 50.2453 )
+position = Vector2( -26.102, 81.6932 )
 
 [node name="Player2Goal" parent="YSort/Barrier" index="2"]
-position = Vector2( 37.6683, 50.4635 )
+position = Vector2( 39.898, 80.6932 )
 
 [node name="Area2D" parent="YSort/Barrier/Player2Goal" index="2"]
 position = Vector2( 23.1633, 0.8909 )
@@ -530,7 +532,16 @@ position = Vector2( 23.1633, 0.8909 )
 position = Vector2( -23.6088, -2.10913 )
 
 [node name="Tree" parent="YSort" instance=ExtResource( 10 )]
-position = Vector2( 271.359, 126.674 )
+position = Vector2( 267.75, 133.193 )
+
+[node name="Bush2" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 251.75, 256.5 )
+
+[node name="Bush3" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 282.75, 256.5 )
+
+[node name="Player1Enemy" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( 265.75, -55.5 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

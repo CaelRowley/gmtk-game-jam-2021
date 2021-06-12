@@ -39,10 +39,6 @@ func _process(delta):
 	match state:
 		RUN:
 			runState(delta)
-		ATTACK:
-			attackState()
-		DODGE:
-			dodgeState()
 	
 func runState(delta):
 	var inputVector = Vector2.ZERO
@@ -64,12 +60,6 @@ func runState(delta):
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 		
 	velocity = move_and_slide(velocity)
-
-	if Input.is_action_just_pressed("attack"):
-		state = ATTACK
-		
-	if Input.is_action_just_pressed("dodge"):
-		state = DODGE
 	
 func attackState():
 	velocity = Vector2.ZERO

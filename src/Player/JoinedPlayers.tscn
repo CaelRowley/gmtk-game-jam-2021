@@ -6,7 +6,7 @@
 [ext_resource path="res://Player/Chain.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 270, 132 )
+extents = Vector2( 176, 92 )
 
 [sub_resource type="SegmentShape2D" id=2]
 a = Vector2( 2.99997, -9.00001 )

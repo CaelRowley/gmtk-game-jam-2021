@@ -516,7 +516,7 @@ tile_data = PoolIntArray( -2097142, 0, 0, -2097141, 0, 2, -2097136, 0, 0, -20971
 position = Vector2( 177, 253 )
 
 [node name="JoinedPlayers" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 248.75, 162.5 )
+position = Vector2( 237.75, 159.5 )
 
 [node name="Level1" type="YSort" parent="YSort"]
 
@@ -537,17 +537,11 @@ position = Vector2( 271.75, 213.5 )
 [node name="Player1Enemy" parent="YSort/Level2" instance=ExtResource( 9 )]
 position = Vector2( 231.75, -74.5 )
 
-[node name="Player2Enemy" parent="YSort/Level2" instance=ExtResource( 11 )]
-position = Vector2( 358.75, -72.5 )
-
 [node name="Player2Enemy2" parent="YSort/Level2" instance=ExtResource( 11 )]
-position = Vector2( 359.75, -93.5 )
-
-[node name="Player2Enemy3" parent="YSort/Level2" instance=ExtResource( 11 )]
-position = Vector2( 360.75, -113.5 )
+position = Vector2( 296.75, -57.5 )
 
 [node name="Player2Enemy5" parent="YSort/Level2" instance=ExtResource( 11 )]
-position = Vector2( 356.75, -56.5 )
+position = Vector2( 338.75, -71.5 )
 
 [node name="Player2Enemy4" parent="YSort/Level2" instance=ExtResource( 11 )]
 position = Vector2( 358.75, -39.5 )
@@ -560,12 +554,6 @@ position = Vector2( 117, 61 )
 
 [node name="Carrot" parent="YSort/Level2/Barrier" index="1"]
 position = Vector2( 58, 62 )
-
-[node name="Player1Enemy2" parent="YSort/Level2" instance=ExtResource( 9 )]
-position = Vector2( 230.75, -90.5 )
-
-[node name="Player1Enemy3" parent="YSort/Level2" instance=ExtResource( 9 )]
-position = Vector2( 192.75, -107.5 )
 
 [node name="Level3" type="YSort" parent="YSort"]
 
@@ -654,6 +642,9 @@ position = Vector2( -1, 245 )
 
 [node name="Carrot" parent="YSort/Level4/Barrier" index="1"]
 position = Vector2( 52, 229 )
+
+[node name="Player2Enemy" parent="YSort/Level4" instance=ExtResource( 11 )]
+position = Vector2( 448.75, -865.5 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

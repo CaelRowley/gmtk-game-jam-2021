@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=2]
+[gd_scene load_steps=75 format=2]
 
 [ext_resource path="res://World/GrassBackground.png" type="Texture" id=1]
 [ext_resource path="res://World/CliffTileset.png" type="Texture" id=2]
@@ -24,6 +24,7 @@
 [ext_resource path="res://World/Friendly/Bunny4.tscn" type="PackedScene" id=22]
 [ext_resource path="res://World/Friendly/Bunny2.tscn" type="PackedScene" id=23]
 [ext_resource path="res://World/Friendly/Endgame.tscn" type="PackedScene" id=24]
+[ext_resource path="res://UI/endgame-text.png" type="Texture" id=25]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -500,7 +501,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 0/z_index = 0
 
 [node name="World" type="Node2D"]
-position = Vector2( 5.25, 42.5 )
+position = Vector2( 5, 43 )
 
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( -585.25, -2450.5 )
@@ -530,7 +531,7 @@ tile_data = PoolIntArray( -4915175, 0, 0, -4915174, 0, 1, -4915173, 0, 1, -49151
 position = Vector2( 177, 253 )
 
 [node name="JoinedPlayers" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 249.75, 160.5 )
+position = Vector2( 747, -1925 )
 
 [node name="Level1" type="YSort" parent="YSort"]
 
@@ -813,16 +814,16 @@ position = Vector2( 754.75, -2100.5 )
 position = Vector2( 679.75, -1999.5 )
 
 [node name="Bunny3" parent="YSort/Level7" instance=ExtResource( 20 )]
-position = Vector2( 817.75, -2027.5 )
+position = Vector2( 812, -1992 )
 
 [node name="Bunny4" parent="YSort/Level7" instance=ExtResource( 22 )]
-position = Vector2( 864.75, -1979.5 )
+position = Vector2( 865, -1971 )
 
 [node name="Chipmunk2" parent="YSort/Level7" instance=ExtResource( 17 )]
 position = Vector2( 837.75, -1939.5 )
 
 [node name="Chipmunk3" parent="YSort/Level7" instance=ExtResource( 19 )]
-position = Vector2( 682.75, -2051.5 )
+position = Vector2( 647, -1984 )
 
 [node name="Chipmunk4" parent="YSort/Level7" instance=ExtResource( 18 )]
 position = Vector2( 850.75, -2009.5 )
@@ -846,20 +847,10 @@ stream = ExtResource( 4 )
 volume_db = -12.0
 autoplay = true
 
-[node name="TextEdit" type="TextEdit" parent="."]
-anchor_top = -0.565
-anchor_bottom = 0.115
-margin_left = 870.75
-margin_top = -1833.5
-margin_right = 1132.75
-margin_bottom = -1779.5
-rect_scale = Vector2( 0.5, 0.5 )
-text = "And the critters lived happily ever after
-for days and days
-"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="endgame-text" type="Sprite" parent="."]
+position = Vector2( 941, -1821 )
+scale = Vector2( 0.205216, 0.220421 )
+texture = ExtResource( 25 )
 
 [editable path="YSort/Level1/Barrier"]
 [editable path="YSort/Level2/Barrier"]

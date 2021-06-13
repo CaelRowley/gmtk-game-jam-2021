@@ -6,52 +6,53 @@
 [ext_resource path="res://World/Lumberjack.gd" type="Script" id=4]
 [ext_resource path="res://World/Logpile.png" type="Texture" id=5]
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
 region = Rect2( 384, 0, 128, 128 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 1 )
 region = Rect2( 256, 0, 128, 128 )
 
-[sub_resource type="AtlasTexture" id=11]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 128, 128 )
-
-[sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 1 )
-region = Rect2( 128, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 128, 128 )
+region = Rect2( 128, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
 region = Rect2( 128, 0, 128, 128 )
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": false,
 "name": "Attack",
 "speed": 16.0
 }, {
-"frames": [ SubResource( 4 ), SubResource( 5 ) ],
+"frames": [ SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 2.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=6]
+[sub_resource type="CapsuleShape2D" id=8]
 radius = 7.0
 height = 0.0
 
-[sub_resource type="CapsuleShape2D" id=7]
+[sub_resource type="CapsuleShape2D" id=9]
 radius = 9.0
 height = 0.0
 
-[sub_resource type="CircleShape2D" id=8]
+[sub_resource type="CircleShape2D" id=10]
+radius = 64.0078
 
 [node name="Lumberjack" type="Node2D"]
 position = Vector2( 3, -1 )
@@ -62,8 +63,9 @@ position = Vector2( 14, 13 )
 texture = ExtResource( 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 3 )
+frames = SubResource( 7 )
 animation = "Idle"
+frame = 1
 playing = true
 
 [node name="Acorn" parent="." instance=ExtResource( 3 )]
@@ -76,7 +78,7 @@ collision_mask = 256
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Acorn/Area2D"]
 position = Vector2( 0, -3 )
-shape = SubResource( 6 )
+shape = SubResource( 8 )
 
 [node name="Carrot" parent="." instance=ExtResource( 2 )]
 position = Vector2( 11, -26 )
@@ -90,13 +92,22 @@ collision_mask = 512
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Carrot/Area2D"]
 position = Vector2( 9, 39 )
-shape = SubResource( 7 )
+shape = SubResource( 9 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 0
+collision_mask = 524288
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( -5, 13 )
-shape = SubResource( 8 )
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="KinematicBody2D"]
+collision_layer = 524288
+collision_mask = 524288
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/Area2D"]
+position = Vector2( -81, 5 )
+shape = SubResource( 10 )
+disabled = true
 
 [connection signal="body_entered" from="Acorn/Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Acorn/Area2D" to="." method="_on_Area2D_body_exited"]

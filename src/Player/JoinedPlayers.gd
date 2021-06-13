@@ -11,6 +11,29 @@ func _ready():
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _on_Area2D_area_entered(area):
+	print('HENLO')
+	print(area)
+	$Chain1.queue_free()
+	$Chain2.queue_free()
+	$Chain3.queue_free()
+	$Chain4.queue_free()
+	$Chain5.queue_free()
+	$Chain6.queue_free()
+	$Chain7.queue_free()
+	$Chain8.queue_free()
+	$ChainLast.queue_free()
+
+
+func _on_Area2D_area_exited(area):
+	print('HENLO')
+	print(area)
+	$Chain1.queue_free()
+	$Chain2.queue_free()
+	$Chain3.queue_free()
+	$Chain4.queue_free()
+	$Chain5.queue_free()
+	$Chain6.queue_free()
+	$Chain7.queue_free()
+	$Chain8.queue_free()
+	$ChainLast.queue_free()

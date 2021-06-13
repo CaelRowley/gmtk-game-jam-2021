@@ -1,6 +1,5 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://InfoButton.gd" type="Script" id=1]
 [ext_resource path="res://PlayButton.gd" type="Script" id=2]
 [ext_resource path="res://UI/menu_main-V3.png" type="Texture" id=3]
 [ext_resource path="res://Music and Sounds/demo2.wav" type="AudioStream" id=4]
@@ -8,38 +7,26 @@
 [node name="MainMenu" type="Node2D"]
 
 [node name="Panel" type="Panel" parent="."]
-margin_right = 640.0
-margin_bottom = 360.0
+margin_right = 426.0
+margin_bottom = 240.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="PlayButton" type="MenuButton" parent="Panel"]
-margin_left = 229.0
-margin_top = 269.0
-margin_right = 241.0
-margin_bottom = 289.0
+margin_left = 139.0
+margin_top = 175.0
+margin_right = 151.0
+margin_bottom = 195.0
 rect_scale = Vector2( 6.82476, 1.58457 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="InfoButton" type="MenuButton" parent="Panel"]
-margin_left = 325.0
-margin_top = 269.0
-margin_right = 337.0
-margin_bottom = 289.0
-rect_scale = Vector2( 6.87113, 1.66035 )
-focus_mode = 2
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 319, 179 )
-scale = Vector2( 0.441373, 0.438599 )
+position = Vector2( 212.606, 119.684 )
+scale = Vector2( 0.293603, 0.292139 )
 texture = ExtResource( 3 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -48,4 +35,3 @@ volume_db = -12.0
 autoplay = true
 
 [connection signal="pressed" from="Panel/PlayButton" to="Panel/PlayButton" method="_on_PlayButton_pressed"]
-[connection signal="pressed" from="Panel/InfoButton" to="Panel/InfoButton" method="_on_InfoButton_pressed"]

@@ -53,11 +53,11 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=8]
-radius = 7.0
+radius = 21.0
 height = 0.0
 
 [sub_resource type="CapsuleShape2D" id=9]
-radius = 9.0
+radius = 19.0
 height = 0.0
 
 [sub_resource type="RectangleShape2D" id=18]
@@ -73,6 +73,7 @@ position = Vector2( 12, 22 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 7 )
 animation = "Idle"
+frame = 1
 playing = true
 
 [node name="Acorn" parent="." instance=ExtResource( 3 )]
@@ -84,7 +85,7 @@ collision_layer = 256
 collision_mask = 256
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Acorn/Area2D"]
-position = Vector2( 0, -3 )
+position = Vector2( 2, 1 )
 shape = SubResource( 8 )
 
 [node name="Carrot" parent="." instance=ExtResource( 2 )]

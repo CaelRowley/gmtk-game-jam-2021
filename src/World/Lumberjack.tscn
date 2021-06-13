@@ -4,7 +4,7 @@
 [ext_resource path="res://World/Carrot.tscn" type="PackedScene" id=2]
 [ext_resource path="res://World/Acorn.tscn" type="PackedScene" id=3]
 [ext_resource path="res://World/Lumberjack.gd" type="Script" id=4]
-[ext_resource path="res://World/Logpile.png" type="Texture" id=5]
+[ext_resource path="res://World/Stump.tscn" type="PackedScene" id=5]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -58,9 +58,8 @@ radius = 64.0078
 position = Vector2( 3, -1 )
 script = ExtResource( 4 )
 
-[node name="Logpile" type="Sprite" parent="."]
-position = Vector2( 14, 13 )
-texture = ExtResource( 5 )
+[node name="Stump" parent="." instance=ExtResource( 5 )]
+position = Vector2( 12, 22 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 7 )

@@ -7,11 +7,9 @@
 [ext_resource path="res://World/Barrier.gd" type="Script" id=5]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 7.0
 height = 0.0
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 9.0
 height = 0.0
 
 [sub_resource type="RectangleShape2D" id=3]
@@ -43,7 +41,7 @@ collision_layer = 512
 collision_mask = 512
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Carrot/Area2D"]
-position = Vector2( 9, 39 )
+position = Vector2( 8, 39 )
 shape = SubResource( 2 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

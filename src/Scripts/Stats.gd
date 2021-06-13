@@ -20,6 +20,8 @@ func setHealth(newHealth):
 	emit_signal("healthChanged", newHealth)
 	if health <= 0:
 		emit_signal("noHealth")
+		get_tree().change_scene("res://MainMenu.tscn")
+		health = maxHealth
 
 func getHealth():
 	return health

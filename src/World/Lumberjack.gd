@@ -6,8 +6,8 @@ onready var player1Goal = $Area2D
 var player1InGoal = false
 var player2InGoal = false
 var velocity = Vector2.ZERO
-const MAX_SPEED = 300
-const ACCELERATION = 800
+const MAX_SPEED = 600
+const ACCELERATION = 1600
 
 var hasPlayedAudio = false
 

@@ -5,6 +5,7 @@
 
 [node name="PlayerHurtSound" type="AudioStreamPlayer"]
 stream = ExtResource( 1 )
+volume_db = -29.658
 autoplay = true
 script = ExtResource( 2 )
 

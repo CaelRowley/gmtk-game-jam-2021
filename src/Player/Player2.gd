@@ -2,6 +2,14 @@ extends KinematicBody2D
 
 const PlayerHurtSound = preload("res://Player/PlayerHurtSound.tscn")
 
+const DanceEffect = preload("res://World/Friendly/Player2Dance.tscn")
+
+func createDanceEffect():
+	var danceEffect = DanceEffect.instance()
+	get_parent().add_child(danceEffect)
+	danceEffect.global_position = global_position
+	queue_free()
+
 enum {
 	RUN,
 	DODGE,
@@ -84,4 +92,6 @@ func _on_Hurtbox_area_entered(collider):
 	var playerHurtSound = PlayerHurtSound.instance()
 	get_tree().current_scene.add_child(playerHurtSound)
 	
-
+func _on_Area2D_area_entered(area):
+	if(area.name == 'Endgame'):
+		createDanceEffect()

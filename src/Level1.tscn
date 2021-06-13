@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=2]
+[gd_scene load_steps=74 format=2]
 
 [ext_resource path="res://World/GrassBackground.png" type="Texture" id=1]
 [ext_resource path="res://World/CliffTileset.png" type="Texture" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://World/Friendly/Bunny1.tscn" type="PackedScene" id=21]
 [ext_resource path="res://World/Friendly/Bunny4.tscn" type="PackedScene" id=22]
 [ext_resource path="res://World/Friendly/Bunny2.tscn" type="PackedScene" id=23]
+[ext_resource path="res://World/Friendly/Endgame.tscn" type="PackedScene" id=24]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -529,7 +530,7 @@ tile_data = PoolIntArray( -4915175, 0, 0, -4915174, 0, 1, -4915173, 0, 1, -49151
 position = Vector2( 177, 253 )
 
 [node name="JoinedPlayers" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 309.75, -1816.5 )
+position = Vector2( 314.75, -1824.5 )
 
 [node name="Level1" type="YSort" parent="YSort"]
 
@@ -788,7 +789,7 @@ position = Vector2( 224.75, -1934.5 )
 position = Vector2( 624.75, -1907.5 )
 
 [node name="Chipmunk1" parent="YSort/Level7" instance=ExtResource( 16 )]
-position = Vector2( 662.75, -1952.5 )
+position = Vector2( 647.75, -1943.5 )
 
 [node name="Bush" parent="YSort/Level7" instance=ExtResource( 8 )]
 position = Vector2( 599.75, -1928.5 )
@@ -800,7 +801,7 @@ position = Vector2( 290, -17 )
 position = Vector2( 44, -91 )
 
 [node name="Bush2" parent="YSort/Level7" instance=ExtResource( 8 )]
-position = Vector2( 756.75, -1955.5 )
+position = Vector2( 927.75, -1994.5 )
 
 [node name="Bush3" parent="YSort/Level7" instance=ExtResource( 8 )]
 position = Vector2( 846.75, -2022.5 )
@@ -809,22 +810,28 @@ position = Vector2( 846.75, -2022.5 )
 position = Vector2( 755.75, -2060.5 )
 
 [node name="Bunny2" parent="YSort/Level7" instance=ExtResource( 23 )]
-position = Vector2( 706.75, -1946.5 )
+position = Vector2( 679.75, -1999.5 )
 
 [node name="Bunny3" parent="YSort/Level7" instance=ExtResource( 20 )]
-position = Vector2( 685.75, -2039.5 )
+position = Vector2( 826.75, -2006.5 )
 
 [node name="Bunny4" parent="YSort/Level7" instance=ExtResource( 22 )]
 position = Vector2( 864.75, -1979.5 )
 
 [node name="Chipmunk2" parent="YSort/Level7" instance=ExtResource( 17 )]
-position = Vector2( 820.75, -1941.5 )
+position = Vector2( 837.75, -1939.5 )
 
 [node name="Chipmunk3" parent="YSort/Level7" instance=ExtResource( 19 )]
-position = Vector2( 744.75, -2002.5 )
+position = Vector2( 724.75, -2060.5 )
 
 [node name="Chipmunk4" parent="YSort/Level7" instance=ExtResource( 18 )]
 position = Vector2( 814.75, -2054.5 )
+
+[node name="Endgame" parent="YSort/Level7" instance=ExtResource( 24 )]
+position = Vector2( 760.75, -2057.5 )
+
+[node name="Tree3" parent="YSort/Level7" instance=ExtResource( 10 )]
+position = Vector2( 655.75, -2100.5 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
